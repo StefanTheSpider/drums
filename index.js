@@ -18,8 +18,10 @@ function pressMe(event) {
 
   if (Object.keys(sounds).includes(event.key)) {
     playSound(sounds[event.key]);
-  }
-}
+  };
+  btnAnimation(event.key)
+};
+
 function handleClick() {
   let event = this.innerHTML;
   switch (event) {
@@ -54,11 +56,20 @@ function handleClick() {
   
     default:
       break;
-  }
+  };
+  btnAnimation(event)
+};
+
+function btnAnimation(currentKey) {
+  let btnClick = document.querySelector("." + currentKey)
+  btnClick.classList.add('pressed')
+  setTimeout(function() {
+    btnClick.classList.remove('pressed');
+  }, 100);
 }
 
 
-document.addEventListener('keydown', pressMe);
+document.addEventListener('keydown', pressMe,);
 
 wBtn.addEventListener('click', handleClick);
 aBtn.addEventListener('click', handleClick);
