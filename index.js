@@ -1,5 +1,16 @@
+/**
+ * 
+ * ? Es werden im einem Sritt sieben Konstanten deklariert dei den (Tasten) Klassen entsprechen, z.B. wBtn = .w
+ * 
+ */
 const [wBtn, aBtn, sBtn, dBtn, jBtn, kBtn, lBtn] = document.querySelectorAll('.w, .a, .s, .d, .j, .k, .l');
-
+/**
+ * 
+ * ? Es wird die Funktion 'playSound' deklariert die die Methode 'sond' hat.
+ * 
+ * ? Die Funktion 
+ * 
+ */
 function playSound(sound) {
   const audio = new Audio(`sounds/${sound}.mp3`);
   audio.play();
@@ -55,6 +66,7 @@ function handleClick() {
       break;
   
     default:
+      console.log('Key was clicked');
       break;
   };
   btnAnimation(event)
